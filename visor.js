@@ -1,6 +1,6 @@
 const electron = require('electron');
 const { Menu, BrowserWindow } = electron;
-const { showInCurrentWorkspace, isMac, debug } = require('./utils');
+const { showInCurrentWorkspace, isMac } = require('./utils');
 
 class Visor {
   constructor(app, opt) {
@@ -18,8 +18,6 @@ class Visor {
         this.layoutWindow();
         this.visorWindow.focus();
       });
-
-      debug('created visor terminal');
       return;
     }
 
@@ -32,20 +30,18 @@ class Visor {
         this.toggleVisible(false);
       }
       this.returnFocus();
-      debug('hide visor terminal');
       return;
     }
 
     if (visible) {
       this.layoutWindow();
       this.toggleVisible(true);
-      debug('refocus visor terminal');
       return;
     }
 
     this.previouslyFocusedApp = BrowserWindow.getFocusedWindow();
+    this.layoutWindow();
     this.toggleVisible(true);
-    debug('reopen visor terminal');
   }
 
   createVisorWindow(cb) {
@@ -56,9 +52,9 @@ class Visor {
         this.handleVisorWindowClose();
       });
       this.visorWindow.on('blur', () => {
-        if (this.config.hideOnBlur) {
-          this.visorWindow.hide();
-        }
+        // if (this.config.hideOnBlur) {
+          // this.visorWindow.hide();
+        // }
       });
       window.rpc.emit('termgroup add req'); // Init terminal in the new window.
       if (cb) cb();
@@ -108,9 +104,9 @@ class Visor {
 
   toggleVisible(visible) {
     if (visible) {
-      showInCurrentWorkspace(this.visorWindow);
       this.visorWindow.show();
       this.visorWindow.focus();
+      showInCurrentWorkspace(this.visorWindow);
     } else {
       this.visorWindow.hide();
     }

@@ -1,10 +1,11 @@
-# hyper-visor-mode
 
-<div text-align="center">
+<div style="text-align: center">
   <img src="./img/icon@2x.png">
 </div>
 
-> Add visor mode to your Hyper terminal.
+# hyper-visor
+
+Add visor mode to your Hyper terminal.
 
 ## Config
 

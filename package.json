@@ -1,18 +1,16 @@
 {
-  "name": "hyper-visor",
-  "version": "0.1.0",
+  "name": "silicic-hyper-visor",
+  "version": "0.1.1",
   "description": "Add visor mode to Hyper.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": ["hyper", "visor", "visor-mode", "terminal", "window"],
+  "author": "Wendell Hu<wendzhue@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silicic-acid/hyper-visor"
   },
-  "keywords": [
-    "hyper",
-    "visor",
-    "visor-mode",
-    "terminal",
-    "window"
-  ],
-  "author": "Wendell Hu <wendzhue@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/silicic-acid/hyper-visor/issues"
+  },
   "license": "MIT"
 }
