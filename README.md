@@ -7,16 +7,24 @@
 
 Add visor mode to your Hyper terminal.
 
+## Installation
+
+Run this command in your terminal
+
+```bash
+$ hyper i silicic-hyper-visor
+```
+
 ## Config
 
-In you `.hyper.js` file:
+In you `.hyper.js` file
 
 ```js
 module.exports = {
   config: {
     visor: {
       trigger: 'command+shift+h', // trigger to open or hide the visor terminal
-      position: 'top', // or 'bottom', 'left', 'right',
+      position: 'top', // or 'bottom', 'left', 'right'
       width: undefined, // 100% width if not set
       height: 500, // 100% height if not set
       hideOnBlur: true // hide it when the visor terminal blurs
