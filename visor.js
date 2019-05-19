@@ -52,9 +52,10 @@ class Visor {
         this.handleVisorWindowClose();
       });
       this.visorWindow.on('blur', () => {
-        // if (this.config.hideOnBlur) {
-          // this.visorWindow.hide();
-        // }
+        if (this.config.hideOnBlur) {
+          this.visorWindow.hide();
+          this.returnFocus();
+        }
       });
       window.rpc.emit('termgroup add req'); // Init terminal in the new window.
       if (cb) cb();
