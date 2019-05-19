@@ -37,6 +37,15 @@ module.exports = {
 
 Icon on [Figma](https://www.figma.com/file/N5iSJfGFNeOWCht6qGxaHMtj/hyper-visor?node-id=2%3A2).
 
+## Known Problems
+
+> I am trying to fix on these problems:
+
+- When you press the trigger shortkey when the visor terminal is focused, it won't bring you back to the previously active application.
+- No animation.
+- It doesn't reload when you update settings.
+- The default size of a new window is messed up.
+
 ## License
 
 MIT
